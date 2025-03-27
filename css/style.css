@@ -1,0 +1,237 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clear {
+	clear: both;
+}
+
+
+/********************************
+/*  BASE STYLES
+/********************************/
+
+html {
+    font-family: "Noto Sans", sans-serif;
+}
+h1, h2, li {
+    font-family: "Noto Serif", serif;
+}
+body {
+    background: #510000;
+    color: #FFF7D9;
+}
+
+
+/***  header  ***/
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    padding: 10px 5%;
+    gap: 30px;
+    background: #320000;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+nav img {
+    height: 120px;
+    position: relative;
+    top: 30px;
+}
+
+/*** main ***/
+
+main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    max-width: 1000px;
+    height: 550px;
+    margin: 0 auto;
+    background: url("https://cdn.glitch.global/34403264-b79a-4679-92f5-2af2a5fb1c12/images%2Forlando%20lake.jpg?v=1742693366858");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: 25%;
+}
+main div {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 10%;
+}
+main h1 {
+    background: #320000;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+main p {
+    background: #510000;    
+    padding: 10px;
+    line-height: 1.4;
+}
+main span {
+    background: #320000;    
+    padding: 10px;
+    font-weight: bold;
+    display: block;
+}
+
+/* section homepageImages */
+
+.homepageImages {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.homepageImages div {
+    flex: 1;
+    flex-basis: 25%;
+}
+.homepageImages .bigImage {
+    flex-basis: 50%;
+    aspect-ratio: 2 / 1;
+}
+.homepageImages img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* section homepageMenu */
+
+.homepageMenu {
+    background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+    background-size: 25px 25px;
+    max-width: 1000px;
+    display: flex;
+    margin: 0 auto;
+    color: #320000;
+    padding: 2vw 6vw 2vw 6vw;
+}
+.homepageMenu div {
+    background: #FFF7D9;
+    flex: 1;
+    text-align: center;
+    line-height: 1.5;
+}
+.homepageMenu h2 {
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+.homepageMenu h3 {
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+
+/* section homepageLocation */
+
+.homepageLocation {
+    max-width: 1000px;
+    margin: 1.5vw auto;
+    display: flex;
+    text-align: center;
+}
+.homepageLocation div:first-of-type {
+    flex: 1;
+    min-height: 250px;
+    flex-basis: 40%;
+    background: #320000;
+    line-height: 1.5;
+    padding: 0 1vw;
+}
+.homepageLocation div:last-of-type {
+    flex: 1;
+    flex-basis: 60%;
+}
+.homepageLocation iframe {
+    width: 100%;
+    height: 100%;
+}
+.homepageLocation h2 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: 2vw 0 1vw 0;
+}
+
+
+/* section homepageGallery */
+
+.homepageGallery {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.homepageGallery figure {
+    position: relative;
+    flex: 1;
+    flex-basis: 33%;
+    aspect-ratio: 1 / 1;
+}
+.homepageGallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out; /* sets up how smooth the transition is */
+}
+.homepageGallery figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF7D9;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    opacity: 0; /* hides the figcaption */
+    transition: all 0.3s ease-in-out; /* sets up how smooth the transition is */
+}
+.homepageGallery figure:hover img {
+    filter: brightness(50%);
+}
+.homepageGallery figure:hover figcaption {
+    opacity: 1;
+}
+
+/* footer */
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    line-height: 2;
+    padding: 2.5%;
+    background: #320000;
+}
+footer span {
+    display: block;
+    line-height: 1.6;
+}
